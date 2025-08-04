@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+.text-stroke-white {
+    -webkit-text-stroke: 2px white;
+    color: black
+}
+
+html, body {
+    overflow-x: hidden;
+  }
+  
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow-x: hidden;
+  }
+  
+
+.curved-top {
+    clip-path: ellipse(100% 100% at 50% 100%);
+  }
+
