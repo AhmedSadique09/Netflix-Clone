@@ -1,27 +1,16 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Questions from "./components/Questions";
-import Reasons from "./components/Reasons";
-import Subscription from "./components/Subscription";
-import Trends from "./components/Trends";
-import Banner from "./components/Banner";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Landing from "./pages/Landing";
+import Home from "./pages/Home";
 
-const App = () => {
+function App() {
   return (
-    <>
-      <Header />
-      <main id="main" className="text-white bg-black">
-        <div className="main">
-          <Banner />
-          <Trends />
-          <Reasons />
-          <Questions />
-          <Subscription />
-        </div>
-      </main>
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;

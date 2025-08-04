@@ -1,6 +1,11 @@
-export default function Footer() {
+interface FooterProps {
+  className?: string;
+  bgColor?: string;
+}
+
+export default function Footer({ className = "", bgColor = "bg-black" }: FooterProps) {
   return (
-    <footer id="footer" className="footer bg-black text-gray-400 text-[16px]">
+    <footer id="footer" className={`footer ${bgColor} text-gray-400 text-[16px] ${className}`}>
       <div className="container mx-auto px-4 py-10">
         <div className="border-b border-gray-700 pb-10">
           <div className="text-2xl mb-6">Questions? Contact us.</div>
@@ -34,7 +39,7 @@ export default function Footer() {
           <div className="mt-6">
             <select className="text-white bg-transparent border border-gray-500 py-2 px-4 rounded text-xl w-full sm:w-[250px]">
               <option className="text-black" value="English">English</option>
-              <option className="text-black" value="Arabic">Arabic</option>
+              <option className="text-black" value="Urdu">Urdu</option>
             </select>
           </div>
         </div>
