@@ -1,4 +1,4 @@
-import Row from "../components/row";
+import Row from "../components/Row";
 import requests from "../request";
 import Footer from "../components/Footer";
 import Header2 from "../components/header2";
