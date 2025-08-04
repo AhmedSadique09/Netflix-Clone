@@ -1,14 +1,14 @@
 import Row from "../components/Row";
 import requests from "../request";
 import Footer from "../components/Footer";
-import Header2 from "../components/header2";
-import Banner2 from "../components/banner2";
+import Homeheader from "../components/Homeheader";
+import Moviebanner from "../components/Moviebanner";
 
 export default function Home() {
   return (
     <div className="App">
-      <Header2 />
-      <Banner2 />
+      <Homeheader />
+      <Moviebanner />
       <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLargeRow />
       <Row title="Trending Now" fetchUrl={requests.fetchTrending} isLargeRow={false} />
       <Row title="History Movies" fetchUrl={requests.fetchHistoryMovies} isLargeRow={false} />

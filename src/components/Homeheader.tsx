@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Homeheader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -65,4 +65,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Homeheader;

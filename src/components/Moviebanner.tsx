@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import requests from "../request";
 
-const Banner = () => {
+const Moviebanner = () => {
   const [movie, setMovie] = useState<any>(null);
 
   useEffect(() => {
@@ -55,4 +55,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default Moviebanner;
