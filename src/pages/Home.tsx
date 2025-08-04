@@ -15,7 +15,7 @@ export default function Home() {
       <Row title="Animation Movies" fetchUrl={requests.fetchAnimationMovies} isLargeRow={false} />
       <Row title="Fantasy Movies" fetchUrl={requests.fetchFantasyMovies} isLargeRow={false} />
       <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} isLargeRow={false} />
-      <Footer  bgColor="bg-[#111111]" />
+      <Footer  bgColor="bg-[#111]" />
     </div>
   );
 }
