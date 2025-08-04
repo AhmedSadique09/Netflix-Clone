@@ -52,46 +52,53 @@ const Row = ({ title, fetchUrl, isLargeRow }: RowProps) => {
     <section id="row" className="w-full relative text-white">
       <div className="px-4 sm:px-6 md:px-10">
         {/* Title */}
-        <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 pt-5">{title}</h2>
+        <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 pt-5">
+          {title}
+        </h2>
 
-        {/* Scroll Buttons */}
-        <button
-          onClick={() => scroll("left")}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 hidden group-hover:flex bg-black/60 text-white p-2 rounded-full transition"
-        >
-          <ChevronLeft />
-        </button>
+        {/* Group wrapper for hover arrows */}
+        <div className="relative group">
+          {/* Left Arrow */}
+          <button
+            onClick={() => scroll("left")}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 hidden group-hover:flex bg-black/60 text-white p-2 rounded-full transition"
+          >
+            <ChevronLeft />
+          </button>
 
-        <motion.div
-          ref={scrollRef}
-          className="group flex overflow-x-scroll scrollbar-hide scroll-smooth gap-3 sm:gap-4 md:gap-6 py-4"
-        >
-          {movies.map((movie) => (
-            <motion.img
-              key={movie.id}
-              onClick={() => handleClick(movie)}
-              whileHover={{ scale: 1.1 }}
-              className={`rounded-md object-cover cursor-pointer transition-transform duration-300 ${
-                isLargeRow
-                  ? "w-[150px] sm:w-[180px] md:w-[200px] lg:w-[240px] max-h-[320px]"
-                  : "w-[100px] sm:w-[140px] md:w-[160px] lg:w-[200px] max-h-[160px]"
-              }`}
-              src={`${baseUrl}${
-                isLargeRow ? movie.poster_path : movie.backdrop_path
-              }`}
-              alt={movie?.name || movie?.title}
-            />
-          ))}
-        </motion.div>
+          {/* Movie Thumbnails Row */}
+          <motion.div
+            ref={scrollRef}
+            className="flex overflow-x-scroll scrollbar-hide scroll-smooth gap-3 sm:gap-4 md:gap-6 py-4"
+          >
+            {movies.map((movie) => (
+              <motion.img
+                key={movie.id}
+                onClick={() => handleClick(movie)}
+                whileHover={{ scale: 1.1 }}
+                className={`rounded-md object-cover cursor-pointer transition-transform duration-300 ${
+                  isLargeRow
+                    ? "w-[150px] sm:w-[180px] md:w-[200px] lg:w-[240px] max-h-[320px]"
+                    : "w-[100px] sm:w-[140px] md:w-[160px] lg:w-[200px] max-h-[160px]"
+                }`}
+                src={`${baseUrl}${
+                  isLargeRow ? movie.poster_path : movie.backdrop_path
+                }`}
+                alt={movie?.name || movie?.title}
+              />
+            ))}
+          </motion.div>
 
-        <button
-          onClick={() => scroll("right")}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 hidden group-hover:flex bg-black/60 text-white p-2 rounded-full transition"
-        >
-          <ChevronRight />
-        </button>
+          {/* Right Arrow */}
+          <button
+            onClick={() => scroll("right")}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden group-hover:flex bg-black/60 text-white p-2 rounded-full transition"
+          >
+            <ChevronRight />
+          </button>
+        </div>
 
-        {/* Trailer */}
+        {/* YouTube Trailer */}
         {trailerUrl && (
           <div className="flex justify-center mt-6">
             <YouTube
